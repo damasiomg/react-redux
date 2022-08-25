@@ -5,7 +5,7 @@ import { FormUser, User } from '../../types';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { setUser } from '../../store/Users/Users.actions';
+import { setLoadingState, setUser} from '../../store/Users/Users.actions';
 
 
 const QuickRegistration: React.FC = () => {
@@ -30,21 +30,25 @@ const QuickRegistration: React.FC = () => {
     },[]);
 
     async function handleAddUser(e: FormEvent<HTMLFormElement>){
+        dispatch(setLoadingState(true));
         e.preventDefault();
 
         api.post('/users', normalizeData(formUser)).then(response => {
+            dispatch(setUser(null));
             window.location.href = '/';
         }).finally(() => {
-            dispatch(setUser(null));
+            dispatch(setLoadingState(false));
         });
     }
 
     async function handleUpdateUser(e: FormEvent<HTMLFormElement>){
+        dispatch(setLoadingState(true));
         e.preventDefault();
         api.put(`/users/${currentUser.id}`, normalizeData(formUser)).then(response => {
+            dispatch(setUser(null));
             window.location.href = '/';
         }).finally(() => {
-            dispatch(setUser(null));
+            dispatch(setLoadingState(false));
         });
     }
 
@@ -65,7 +69,8 @@ const QuickRegistration: React.FC = () => {
     }
 
     return (
-        <>
+        <>  
+            <div>Cadastro / Atualizacão de usuário</div>
             <Form onSubmit={!!currentUser?.id ? handleUpdateUser : handleAddUser}>
                 <BoxInput>
                     <input

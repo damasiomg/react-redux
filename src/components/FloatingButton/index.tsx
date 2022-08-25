@@ -13,7 +13,7 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({route}) => {
     return (
         <>
             <FloatItem>
-                <Link to='/registration'>&#43;</Link>
+                <Link to={route}>&#43;</Link>
             </FloatItem>
         </>
     )

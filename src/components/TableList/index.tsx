@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { User } from '../../types';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { setUser } from '../../store/Users/Users.actions';
+import { setUser, setLoadingState } from '../../store/Users/Users.actions';
+import FloatingButton from '../../components/FloatingButton';
 import  api from '../../services/api';
 
 interface TableListProps {
@@ -23,15 +24,17 @@ const TableList: React.FC<TableListProps> = ({list}) => {
     }
 
     async function handleDeleteUser(id: number | undefined){
+        dispatch(setLoadingState(true));
         api.delete(`/users/${id}`).then(response => {
         }).finally(() => {
+            dispatch(setLoadingState(false));
             dispatch(setUser(null));
-            window.location.href = '/';
         });
     }
     
     return (
         <>
+            <FloatingButton route='/registration'/>
             <TableItem>
                 <thead>
                     <tr>

@@ -19,5 +19,6 @@ export interface FormUser{
 }
 
 export interface UserState{
-    currentUser: FormUser
+    currentUser: FormUser,
+    isLoading: Boolean
 }
