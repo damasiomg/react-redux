@@ -50,4 +50,12 @@ export const BoxInput = styled.div`
 
     }
 
+    &.green-type{
+        button{
+            background: #04aa6d;
+            &:hover{
+                background: #059862;
+            }
+        }
+    }
 `;

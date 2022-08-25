@@ -4,14 +4,20 @@ export interface Name {
 }
 
 export interface User {
+    id?: number,
     name: Name,
     email: string,
     password: string
 }
 
 export interface FormUser{
+    id?: number,
     firstname: string,
     lastname: string,
     email: string,
     password: string   
+}
+
+export interface UserState{
+    currentUser: FormUser
 }

@@ -13,12 +13,13 @@
     "removeComments": true,           
     "isolatedModules": true,             
     "strict": true,                      
+    "useUnknownInCatchVariables": false,
     "moduleResolution": "node",       
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,             
     "skipLibCheck": true,                   
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,  
+    "resolveJsonModule": true,
   },
   "include": [
     "src"

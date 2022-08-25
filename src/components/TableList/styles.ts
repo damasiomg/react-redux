@@ -43,4 +43,8 @@ export const TableItem = styled.table`
     tr:last-of-type td:last-of-type {
         border-bottom-right-radius: 10px;
     }
+
+    td.ceil-name{
+        text-transform: capitalize;
+    }
 `;
