@@ -19,6 +19,9 @@ export default createGlobalStyle`
         max-width: 960px;
         margin: 0 auto;
         padding: 20px;
+        @media screen and (max-width: 768px) {
+            padding: 10px;
+        }
     }
 
     button {

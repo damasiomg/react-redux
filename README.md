@@ -6,6 +6,9 @@ This is a CRUD project with React, Typescript, Redux, Hooks and Webpack.
 ## Sample
 ![](react-redux.png)
 
+## Live Demo
+* https://cosmic-belekoy-9817bd.netlify.app
+
 ## Requirements:
 1. `node 14.x or >`
 
