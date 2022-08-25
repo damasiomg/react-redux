@@ -17,7 +17,7 @@ const Home: React.FC = () => {
 
     useEffect(() => {
         dispatch(setLoadingState(true));
-        api.get('/users/?limit=5').then(response => {
+        api.get('/users/').then(response => {
             if(response && response.data){
                 setList(response.data);
                 dispatch(setLoadingState(false));
