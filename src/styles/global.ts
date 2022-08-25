@@ -25,6 +25,10 @@ export default createGlobalStyle`
         cursor: pointer;
     }
 
+    input, button, a {
+        outline-color: rgb(130,87,229);
+    }
+
     .action-ceil{
         display: grid;
         grid-template-columns: 35px 35px;

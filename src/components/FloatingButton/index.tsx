@@ -1,5 +1,6 @@
 import React from 'react';
 import { FloatItem } from './styles';
+import { Link } from 'react-router-dom';
 
 
 interface FloatingButtonProps {
@@ -12,7 +13,7 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({route}) => {
     return (
         <>
             <FloatItem>
-                <a href='#'>&#43;</a>
+                <Link to='/registration'>&#43;</Link>
             </FloatItem>
         </>
     )

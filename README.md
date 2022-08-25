@@ -1,4 +1,4 @@
-# Apply
+# React-Redux
 
 ## What's it?
 This is a CRUD project with React, Typescript, Redux, Hooks and Webpack.
