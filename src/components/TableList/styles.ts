@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 export const TableItem = styled.table`
     border-collapse: collapse;
@@ -6,7 +6,9 @@ export const TableItem = styled.table`
     font-size: 0.9em;
     font-family: sans-serif;
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    thead tr {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
+    
+    thead tr {
         background-color: #8257e5;
         color: #ffffff;
         text-align: left;

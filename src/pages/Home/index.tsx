@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TableList from '../../components/TableList';
 import { User } from '../../types';
-
-
 import api from '../../services/api';
 import LoadingPage from '../../components/LoadingPage';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +10,6 @@ import { setLoadingState } from '../../store/Users/Users.actions';
 const Home: React.FC = () => {
     const dispatch = useDispatch();
     const user = useSelector((store: RootState) => store.users);
-
     const [list, setList] = useState<User[]>([]);
 
     useEffect(() => {
@@ -23,8 +20,6 @@ const Home: React.FC = () => {
                 dispatch(setLoadingState(false));
             }
         })
-
-
     }, []);
 
     return (

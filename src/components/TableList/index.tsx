@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { TableItem } from './styles';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,6 @@ import  api from '../../services/api';
 interface TableListProps {
     list: User[]
 }
-
 
 const TableList: React.FC<TableListProps> = ({list}) => {
 

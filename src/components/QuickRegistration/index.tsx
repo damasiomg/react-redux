@@ -1,17 +1,15 @@
 import React, {useState, useEffect, FormEvent } from 'react';
 import  api from '../../services/api';
 import { Form, BoxInput } from './styles';
-import { FormUser, User } from '../../types';
+import { FormUser } from '../../types';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { setLoadingState, setUser} from '../../store/Users/Users.actions';
 
-
 const QuickRegistration: React.FC = () => {
-    
-    const dispatch = useDispatch();
 
+    const dispatch = useDispatch();
     const currentUser = useSelector((store: RootState) => store.users.currentUser);
 
     let INITIAL_STATE = {
@@ -52,16 +50,15 @@ const QuickRegistration: React.FC = () => {
         });
     }
 
-
-    const normalizeData = (dataOfForm: FormUser): User => {
-        return {
+    const normalizeData = (dataOfForm: FormUser): string => {
+        return JSON.stringify({
             email: dataOfForm.email,
             password: dataOfForm.password,
             name:{
                 firstname: dataOfForm.firstname,
                 lastname:dataOfForm.lastname
             }
-        }
+        })
     }
 
     function returnList(){
@@ -70,7 +67,7 @@ const QuickRegistration: React.FC = () => {
 
     return (
         <>  
-            <div>Cadastro / Atualizacão de usuário</div>
+            <div>{!!currentUser.id ? 'Atualização' : 'Cadastro'} de usuário</div>
             <Form onSubmit={!!currentUser?.id ? handleUpdateUser : handleAddUser}>
                 <BoxInput>
                     <input

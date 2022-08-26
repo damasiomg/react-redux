@@ -34,7 +34,7 @@ export default createGlobalStyle`
 
     .action-ceil{
         display: grid;
-        grid-template-columns: 35px 35px;
+        grid-template-columns: 50px 10px;
         cursor: pointer;
     }
 

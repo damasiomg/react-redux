@@ -3,7 +3,6 @@ import { Container } from './styles';
 import LoadingVector from '../../assets/preloader.svg';
 
 const LoadingPage: React.FC = () => {
-
     return (
         <>
             <Container>
@@ -11,7 +10,6 @@ const LoadingPage: React.FC = () => {
             </Container>
         </>
     )
-
 }
 
 export default LoadingPage;
